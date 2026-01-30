@@ -16,7 +16,7 @@ function Setup-StrictOpsRole {
 
         [string]$RoleName = "StrictOpsAccess",
 
-        [string]$StackName = "strictops-cross-account-role"
+        [string]$StackName = "strictops-cross-account-role-$RoleName"
     )
 
     $TemplateUrl = "https://raw.githubusercontent.com/strictops/strictops-setup/main/aws/cross-account-role.yaml"
