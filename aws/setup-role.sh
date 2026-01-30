@@ -14,7 +14,6 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Default values
-STACK_NAME="strictops-cross-account-role-${ROLE_NAME}"
 ROLE_NAME="StrictOpsAccess"
 REGION="${AWS_DEFAULT_REGION:-us-east-1}"
 TEMPLATE_URL="https://raw.githubusercontent.com/strictops/strictops-setup/main/aws/cross-account-role.yaml"
@@ -48,6 +47,8 @@ while [[ $# -gt 0 ]]; do
       ;;
   esac
 done
+
+STACK_NAME="strictops-cross-account-role-${ROLE_NAME}"
 
 # Validate required parameters
 if [[ -z "$EXTERNAL_ID" ]]; then
