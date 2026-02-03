@@ -84,6 +84,9 @@ Resources:
                 Resource: '*'
               - Effect: Allow
                 Action:
+                  - cloudformation:CreateStack
+                  - cloudformation:UpdateStack
+                  - cloudformation:DeleteStack
                   - cloudformation:CreateChangeSet
                   - cloudformation:DescribeChangeSet
                   - cloudformation:ExecuteChangeSet
@@ -94,10 +97,18 @@ Resources:
               - Effect: Allow
                 Action:
                   - iam:CreateRole
+                  - iam:DeleteRole
                   - iam:AttachRolePolicy
+                  - iam:DetachRolePolicy
                   - iam:PutRolePolicy
+                  - iam:DeleteRolePolicy
                   - iam:PassRole
                   - iam:GetRole
+                  - iam:TagRole
+                  - iam:CreateOpenIDConnectProvider
+                  - iam:GetOpenIDConnectProvider
+                  - iam:DeleteOpenIDConnectProvider
+                  - iam:TagOpenIDConnectProvider
                 Resource: '*'
 
 Outputs:
