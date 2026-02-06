@@ -42,6 +42,7 @@ Resources:
                   - ecs:ListServices
                   - ecs:ListTaskDefinitions
                   - ecs:RegisterTaskDefinition
+                  - ecs:DeregisterTaskDefinition
                   - ecs:UpdateService
                   - ecs:CreateService
                   - ecs:DeleteService
@@ -52,6 +53,7 @@ Resources:
               - Effect: Allow
                 Action:
                   - ecr:CreateRepository
+                  - ecr:DeleteRepository
                   - ecr:DescribeRepositories
                   - ecr:GetAuthorizationToken
                   - ecr:InitiateLayerUpload
@@ -65,12 +67,22 @@ Resources:
                   - elasticloadbalancing:CreateLoadBalancer
                   - elasticloadbalancing:CreateTargetGroup
                   - elasticloadbalancing:CreateListener
+                  - elasticloadbalancing:CreateRule
                   - elasticloadbalancing:DescribeLoadBalancers
+                  - elasticloadbalancing:DescribeLoadBalancerAttributes
                   - elasticloadbalancing:DescribeTargetGroups
+                  - elasticloadbalancing:DescribeTargetGroupAttributes
                   - elasticloadbalancing:DescribeListeners
+                  - elasticloadbalancing:DescribeRules
+                  - elasticloadbalancing:ModifyLoadBalancerAttributes
+                  - elasticloadbalancing:ModifyTargetGroupAttributes
+                  - elasticloadbalancing:ModifyListener
+                  - elasticloadbalancing:ModifyRule
+                  - elasticloadbalancing:SetSecurityGroups
                   - elasticloadbalancing:DeleteLoadBalancer
                   - elasticloadbalancing:DeleteTargetGroup
                   - elasticloadbalancing:DeleteListener
+                  - elasticloadbalancing:DeleteRule
                   - elasticloadbalancing:AddTags
                 Resource: '*'
               - Effect: Allow
@@ -119,6 +131,23 @@ Resources:
                 Resource: '*'
               - Effect: Allow
                 Action:
+                  - acm:RequestCertificate
+                  - acm:DescribeCertificate
+                  - acm:DeleteCertificate
+                  - acm:ListCertificates
+                  - acm:AddTagsToCertificate
+                Resource: '*'
+              - Effect: Allow
+                Action:
+                  - route53:ChangeResourceRecordSets
+                  - route53:GetHostedZone
+                  - route53:GetChange
+                  - route53:ListHostedZonesByName
+                  - route53:CreateHostedZone
+                  - route53:ChangeTagsForResource
+                Resource: '*'
+              - Effect: Allow
+                Action:
                   - iam:CreateRole
                   - iam:DeleteRole
                   - iam:AttachRolePolicy
@@ -132,6 +161,7 @@ Resources:
                   - iam:GetOpenIDConnectProvider
                   - iam:DeleteOpenIDConnectProvider
                   - iam:TagOpenIDConnectProvider
+                  - iam:CreateServiceLinkedRole
                 Resource: '*'
 
 Outputs:
