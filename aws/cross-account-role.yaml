@@ -46,6 +46,8 @@ Resources:
                   - ecs:CreateService
                   - ecs:DeleteService
                   - ecs:CreateCluster
+                  - ecs:DeleteCluster
+                  - ecs:TagResource
                 Resource: '*'
               - Effect: Allow
                 Action:
@@ -65,6 +67,9 @@ Resources:
                   - elasticloadbalancing:DescribeLoadBalancers
                   - elasticloadbalancing:DescribeTargetGroups
                   - elasticloadbalancing:DescribeListeners
+                  - elasticloadbalancing:DeleteLoadBalancer
+                  - elasticloadbalancing:DeleteTargetGroup
+                  - elasticloadbalancing:DeleteListener
                 Resource: '*'
               - Effect: Allow
                 Action:
@@ -74,6 +79,9 @@ Resources:
                   - ec2:DescribeSecurityGroups
                   - ec2:DescribeVpcs
                   - ec2:DescribeSubnets
+                  - ec2:DeleteSecurityGroup
+                  - ec2:RevokeSecurityGroupIngress
+                  - ec2:RevokeSecurityGroupEgress
                 Resource: '*'
               - Effect: Allow
                 Action:
@@ -81,6 +89,7 @@ Resources:
                   - logs:PutRetentionPolicy
                   - logs:DescribeLogGroups
                   - logs:FilterLogEvents
+                  - logs:DeleteLogGroup
                 Resource: '*'
               - Effect: Allow
                 Action:
