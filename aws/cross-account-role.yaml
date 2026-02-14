@@ -161,8 +161,40 @@ Resources:
                   - iam:CreateOpenIDConnectProvider
                   - iam:GetOpenIDConnectProvider
                   - iam:DeleteOpenIDConnectProvider
+                  - iam:ListOpenIDConnectProviders
                   - iam:TagOpenIDConnectProvider
                   - iam:CreateServiceLinkedRole
+                Resource: '*'
+              - Effect: Allow
+                Action:
+                  - secretsmanager:CreateSecret
+                  - secretsmanager:DeleteSecret
+                  - secretsmanager:DescribeSecret
+                  - secretsmanager:GetRandomPassword
+                  - secretsmanager:GetSecretValue
+                  - secretsmanager:PutSecretValue
+                  - secretsmanager:TagResource
+                  - secretsmanager:UpdateSecret
+                Resource: '*'
+              - Effect: Allow
+                Action:
+                  - rds:CreateDBInstance
+                  - rds:DeleteDBInstance
+                  - rds:DescribeDBInstances
+                  - rds:ModifyDBInstance
+                  - rds:CreateDBSubnetGroup
+                  - rds:DeleteDBSubnetGroup
+                  - rds:DescribeDBSubnetGroups
+                  - rds:AddTagsToResource
+                  - rds:ListTagsForResource
+                Resource: '*'
+              - Effect: Allow
+                Action:
+                  - ssm:PutParameter
+                  - ssm:DeleteParameter
+                  - ssm:GetParameter
+                  - ssm:GetParameters
+                  - ssm:AddTagsToResource
                 Resource: '*'
 
 Outputs:
