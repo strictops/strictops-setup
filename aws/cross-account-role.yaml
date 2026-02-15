@@ -196,6 +196,15 @@ Resources:
                   - ssm:GetParameters
                   - ssm:AddTagsToResource
                 Resource: '*'
+              - Effect: Allow
+                Action:
+                  - s3:CreateBucket
+                  - s3:PutBucketVersioning
+                  - s3:PutBucketPublicAccessBlock
+                  - s3:HeadBucket
+                  - s3:PutObject
+                  - s3:GetObject
+                Resource: '*'
 
 Outputs:
   StrictOpsRoleArn:
