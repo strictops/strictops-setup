@@ -204,6 +204,7 @@ Resources:
                   - s3:HeadBucket
                   - s3:PutObject
                   - s3:GetObject
+                  - s3:TagResource
                 Resource: '*'
 
 Outputs:
