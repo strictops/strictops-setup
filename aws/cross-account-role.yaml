@@ -200,9 +200,9 @@ Resources:
                 Action:
                   - s3:CreateBucket
                   - s3:DeleteBucket
+                  - s3:ListBucket
                   - s3:PutBucketVersioning
                   - s3:PutBucketPublicAccessBlock
-                  - s3:HeadBucket
                   - s3:PutObject
                   - s3:GetObject
                   - s3:DeleteObject
