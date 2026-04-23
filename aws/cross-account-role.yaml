@@ -112,6 +112,12 @@ Resources:
                 Resource: '*'
               - Effect: Allow
                 Action:
+                  - cloudwatch:GetMetricData
+                  - cloudwatch:GetMetricStatistics
+                  - cloudwatch:ListMetrics
+                Resource: '*'
+              - Effect: Allow
+                Action:
                   - ssm:GetParameters
                 Resource: arn:aws:ssm:*:*:parameter/cdk-bootstrap/*
               - Effect: Allow
@@ -194,6 +200,7 @@ Resources:
                   - ssm:DeleteParameter
                   - ssm:GetParameter
                   - ssm:GetParameters
+                  - ssm:GetParametersByPath
                   - ssm:AddTagsToResource
                 Resource: '*'
               - Effect: Allow
